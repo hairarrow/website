@@ -69,9 +69,8 @@ table {
   animation-delay: 1.5s; }
 
 body {
-  background-color: #008EEB;
-  background: #008EEB;
-  border-top: 4px solid rgba(0, 0, 0, 0.4);
+  background-color: #f2f2f2;
+  border-top: 4px solid #008EEB;
   font: normal 1em "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased; }
 
@@ -81,22 +80,22 @@ a {
 h1 {
   text-align: center;
   font: 100px "Cubano", Helvetica, sans-serif;
-  color: whitesmoke;
-  text-shadow: 0 4px 0 rgba(0, 0, 0, 0.4);
+  color: #008EEB;
+  text-shadow: 0 4px 0 rgba(0, 142, 235, 0.4);
   margin: 10% auto 10px; }
 
 .role {
   text-align: center;
   font: 300 32px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: white;
-  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4); }
+  color: #595959;
+  text-shadow: 0 2px 0 #e6e6e6; }
   .role a {
-    color: white;
-    box-shadow: 0 4px 0 transparent, 0 6px 0 rgba(0, 0, 0, 0.4);
+    color: #595959;
+    box-shadow: 0 0 0 #008EEB, 0 2px 0 #008EEB;
     transition: all 0.3s ease; }
     .role a:hover {
-      box-shadow: 0 0 0 #006fb8, 0 2px 0 #F79222;
-      color: #b8e3ff; }
+      box-shadow: 0 4px 0 #F79222, 0 6px 0 #F79222;
+      color: #008EEB; }
 
 .contact-card {
   background: white;
