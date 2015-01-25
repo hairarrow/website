@@ -81,7 +81,7 @@ h1 {
   text-align: center;
   font: 100px "Cubano", Helvetica, sans-serif;
   color: #008EEB;
-  text-shadow: 0 4px 0 rgba(0, 142, 235, 0.4);
+  text-shadow: 0 4px 0 rgba(0, 142, 235, 0.2);
   margin: 10% auto 10px; }
 
 .role {
@@ -108,9 +108,17 @@ h1 {
   right: 0;
   bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4); }
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1); }
+  .contact-card .mark {
+    text-align: center;
+    font: 12px "Cubano", Helvetica, sans-serif;
+    line-height: 22px;
+    width: 22px;
+    background: #008EEB;
+    color: #fff;
+    border-radius: 50%; }
   .contact-card .name {
-    margin-top: 80px;
+    margin-top: 90px;
     color: #4d4d4d;
     text-align: center;
     text-transform: uppercase;
@@ -121,7 +129,7 @@ h1 {
     text-align: center;
     font-size: 14px;
     font-weight: bold;
-    margin-bottom: 46px; }
+    margin-bottom: 36px; }
   .contact-card .contact a {
     display: block;
     width: auto;
@@ -130,7 +138,22 @@ h1 {
     line-height: 28px;
     margin-bottom: 10px;
     transition: all 0.3s ease;
-    padding-left: 10px; }
+    padding-left: 14px;
+    overflow: hidden; }
+    .contact-card .contact a:first-child:after {
+      content: 'Send me an Email'; }
+    .contact-card .contact a:last-child:after {
+      content: 'Call Me'; }
+    .contact-card .contact a:after {
+      float: right;
+      font-size: 12px;
+      font-weight: bold;
+      color: #cccccc;
+      padding-right: 14px;
+      text-transform: uppercase;
+      position: relative;
+      top: 30px;
+      transition: all 0.3s ease; }
     .contact-card .contact a span {
       color: #008EEB;
       font-weight: bold; }
@@ -139,5 +162,7 @@ h1 {
       box-shadow: 0 0 0 white, 0 2px 0 #008EEB; }
       .contact-card .contact a:hover span {
         color: #1fa6ff; }
+      .contact-card .contact a:hover:after {
+        top: 0; }
 
 /*# sourceMappingURL=styles.css.map */
