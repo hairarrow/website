@@ -108,15 +108,18 @@ h1 {
   right: 0;
   bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1); }
+  box-shadow: 0 4px 0 #ededed; }
   .contact-card .mark {
     text-align: center;
-    font: 12px "Cubano", Helvetica, sans-serif;
-    line-height: 22px;
-    width: 22px;
+    font: 22px "Cubano", Helvetica, sans-serif;
+    line-height: 32px;
+    width: 32px;
     background: #008EEB;
     color: #fff;
-    border-radius: 50%; }
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px; }
   .contact-card .name {
     margin-top: 90px;
     color: #4d4d4d;
@@ -125,23 +128,27 @@ h1 {
     font-weight: bold;
     font-size: 18px; }
   .contact-card .title {
-    color: #666666;
+    color: gray;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     margin-bottom: 36px; }
   .contact-card .contact a {
+    width: 50%;
     display: block;
+    font-size: 14px;
     width: auto;
     color: #4d4d4d;
     box-shadow: 0 4px 0 white, 0 6px white;
     line-height: 28px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     transition: all 0.3s ease;
     padding-left: 14px;
     overflow: hidden; }
-    .contact-card .contact a:first-child:after {
-      content: 'Send me an Email'; }
+    .contact-card .contact a:first-child {
+      margin-bottom: 4px; }
+      .contact-card .contact a:first-child:after {
+        content: 'Email Me'; }
     .contact-card .contact a:last-child:after {
       content: 'Call Me'; }
     .contact-card .contact a:after {
