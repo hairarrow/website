@@ -78,11 +78,18 @@ a {
   text-decoration: none; }
 
 h1 {
+  margin: 10% auto 10px;
   text-align: center;
   font: 100px "Cubano", Helvetica, sans-serif;
   color: #008EEB;
-  text-shadow: 0 4px 0 rgba(0, 142, 235, 0.2);
-  margin: 10% auto 10px; }
+  text-shadow: 0 4px 0 rgba(0, 142, 235, 0.2); }
+  @media only screen and (max-width: 460px) {
+    h1 {
+      font-size: 80px; } }
+  @media only screen and (max-width: 360px) {
+    h1 {
+      margin: 24px auto;
+      font-size: 64px; } }
 
 .role {
   text-align: center;
@@ -96,19 +103,30 @@ h1 {
     .role a:hover {
       box-shadow: 0 4px 0 #F79222, 0 6px 0 #F79222;
       color: #008EEB; }
+  @media only screen and (max-width: 460px) {
+    .role {
+      font-size: 26px; } }
+  @media only screen and (max-width: 360px) {
+    .role {
+      font-size: 18px; } }
 
 .contact-card {
   background: white;
   margin: auto;
   width: 100%;
   max-width: 420px;
-  min-width: 320px;
+  min-width: 270px;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 20px;
+  border: 1px solid #ccc;
+  border: 1px solid #008EEB;
   border-radius: 8px;
   box-shadow: 0 4px 0 #ededed; }
+  @media only screen and (max-width: 460px) {
+    .contact-card {
+      width: 90%; } }
   .contact-card .mark {
     text-align: center;
     font: 22px "Cubano", Helvetica, sans-serif;
@@ -134,17 +152,19 @@ h1 {
     font-weight: bold;
     margin-bottom: 36px; }
   .contact-card .contact a {
-    width: 50%;
     display: block;
-    font-size: 14px;
     width: auto;
-    color: #4d4d4d;
-    box-shadow: 0 4px 0 white, 0 6px white;
-    line-height: 28px;
-    margin-bottom: 8px;
-    transition: all 0.3s ease;
     padding-left: 14px;
-    overflow: hidden; }
+    margin-bottom: 8px;
+    color: #4d4d4d;
+    font-size: 14px;
+    line-height: 28px;
+    border-bottom: 1px solid rgba(0, 142, 235, 0);
+    overflow: hidden;
+    transition: all 0.3s ease; }
+    @media only screen and (max-width: 460px) {
+      .contact-card .contact a {
+        padding: 5px 14px; } }
     .contact-card .contact a:first-child {
       margin-bottom: 4px; }
       .contact-card .contact a:first-child:after {
@@ -152,24 +172,30 @@ h1 {
     .contact-card .contact a:last-child:after {
       content: 'Call Me'; }
     .contact-card .contact a:after {
+      transition: all 0.3s ease;
+      position: relative;
+      top: 30px;
+      padding-right: 14px;
       float: right;
       font-size: 12px;
       font-weight: bold;
       color: #cccccc;
-      padding-right: 14px;
-      text-transform: uppercase;
-      position: relative;
-      top: 30px;
-      transition: all 0.3s ease; }
+      text-transform: uppercase; }
     .contact-card .contact a span {
       color: #008EEB;
       font-weight: bold; }
     .contact-card .contact a:hover {
       color: #008EEB;
-      box-shadow: 0 0 0 white, 0 2px 0 #008EEB; }
-      .contact-card .contact a:hover span {
-        color: #1fa6ff; }
+      border-bottom: 1px solid #008EEB; }
       .contact-card .contact a:hover:after {
         top: 0; }
+      .contact-card .contact a:hover:after {
+        color: #008EEB; }
+    @media only screen and (max-width: 460px) {
+      .contact-card .contact a {
+        color: #008EEB;
+        border-bottom: 1px solid #008EEB; }
+        .contact-card .contact a:after {
+          top: 0; } }
 
 /*# sourceMappingURL=styles.css.map */
