@@ -1,4 +1,5 @@
 .sass-cache
-scss/*
-.htaccess
-
+.babelrc
+.eslintrc.js
+build/
+node_modules/

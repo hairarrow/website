@@ -1,0 +1,161 @@
+$font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$cubano: "Cubano", Helvetica, sans-serif;
+$accent: #008EEB;
+$rgc: #F79222;
+
+$phone: "only screen and (max-width: 460px)";
+$phone-small: "only screen and (max-width: 360px)";
+
+@import "reset";
+@import "font";
+@import "fade";
+
+body {
+  background-color: darken(white, 5);
+  border-top: 4px solid $accent;
+  font: normal 16px $font-family;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; }
+
+h1 {
+  margin: 10% auto 10px;
+  text-align: center;
+  font: 100px $cubano;
+  color: $accent;
+  text-shadow: 0 4px 0 rgba($accent, 0.2);
+
+  @media #{$phone} { font-size: 80px;  }
+
+  @media #{$phone-small} {
+    margin: 24px auto;
+    font-size: 64px;
+  }
+}
+
+.role {
+  text-align: center;
+  font: 300 32px $font-family;
+  color: darken(white, 65);
+  text-shadow: 0 2px 0 darken(white, 10);
+
+  a {
+    color: darken(white, 65);
+    box-shadow: 0 0 0 $accent, 0 2px 0 $accent;
+    @include transition;
+
+    &:hover {
+      box-shadow: 0 4px 0 $rgc, 0 6px 0 $rgc;
+      color: $accent;
+    }
+  }
+
+  @media #{$phone} { font-size: 26px; }
+
+  @media #{$phone-small} { font-size: 18px; }
+}
+
+.contact-card {
+  background: white;
+  margin: auto;
+  width: 100%;
+  max-width: 420px;
+  min-width: 270px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  border: 1px solid #ccc;
+  border: 1px solid $accent;
+  border-radius: 8px;
+  box-shadow: 0 4px 0 darken(white, 7);
+
+  @media #{$phone} { width: 90%; }
+
+  .mark {
+    text-align: center;
+    font: 22px $cubano;
+    line-height: 32px;
+    width: 32px;
+    background: $accent;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .name {
+    margin-top: 90px;
+    color: lighten(black, 30);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .title {
+    color: lighten(black, 50);
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 36px;
+  }
+
+  .contact {
+    a {
+      display: block;
+      width: auto;
+      padding-left: 14px;
+      margin-bottom: 8px;
+      color: lighten(black, 30);
+      font-size: 14px;
+      line-height: 28px;
+      border-bottom: 1px solid rgba($accent, 0);
+      overflow: hidden;
+      @include transition;
+
+      @media #{$phone} {
+        padding: 5px 14px;
+      }
+
+      &:first-child {
+        margin-bottom: 4px;
+
+        &:after { content: 'Email Me'; }
+      }
+
+      &:last-child:after { content: 'Call Me'; }
+
+      &:after {
+        @include transition;
+        position: relative;
+        top: 30px;
+        padding-right: 14px;
+        float: right;
+        font-size: 12px;
+        font-weight: bold;
+        color: darken(white, 20);
+        text-transform: uppercase;
+      }
+
+      span { color: $accent; font-weight: bold; }
+
+      @mixin x {
+        color: $accent;
+        border-bottom: 1px solid $accent;
+
+        &:after { top: 0; }
+      }
+
+      &:hover {
+        @include x;
+
+        &:after { color: $accent; }
+      }
+
+      @media #{$phone} { @include x; }
+    }
+  }
+}
