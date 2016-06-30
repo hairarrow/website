@@ -17,18 +17,10 @@ module.exports = {
     ]
   },
   devtool: 'source-map',
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
-    })
-  ],
   postcss: function() {
     return [autoprefixer];
   },
   resolve: {
-    extensions: ['', '.js', '.es6.js', '.jsx'],
     root: [
       path.resolve('./node_modules'),
       path.resolve('./scripts'),

@@ -17,10 +17,16 @@ body {
   @media screen and (max-height: 800px) { height: auto; }
 }
 
+@mixin blackout($t: 4000ms, $d: 1500ms) {
+  opacity: .2;
+  animation: blackout $t ease $d forwards;
+}
+
 header {
   @include layout();
   display: flex;
   padding: rem(60px) 0;
+  @include blackout();
 
   h1 {
     color: $w3;
@@ -28,6 +34,8 @@ header {
     font: 42px $cubano;
     padding-left: rem(20px);
   }
+
+  @media screen and (max-width: rem(500px)) { padding: rem(40px) 0; }
 }
 
 main {
@@ -45,14 +53,20 @@ main {
     font-weight: 600;
     line-height: 1.6;
     box-shadow: 0 1px $w2;
+    @include blackout(1000ms, 0ms);
 
     @media screen and (max-width: rem(500px)) {
+      font-size: rem(24px);
+      margin-bottom: rem(40px);
+      padding-bottom: rem(40px);
+
       br { display: none; }
     }
   }
 
   a {
     color: $w4;
+    color: $or;
     box-shadow: 0 2px $w2;
     transition: all 300ms ease;
 
@@ -72,6 +86,16 @@ main {
     font-size: rem(18px);
     font-weight: 500;
     line-height: 1.8;
+    @include blackout();
+
+    @media screen and (max-width: rem(500px)) {
+      margin-bottom: rem(40px);
+      font-size: rem(16px);
+    }
+
+    @media screen and (max-width: rem(400px)) {
+      font-size: rem(14px);
+    }
   }
 }
 
@@ -81,6 +105,13 @@ main {
   align-items: center;
   padding: rem(20px);
   border-top: 1px solid $w2;
+  @include blackout();
+
+  &__mark {
+    display: flex;
+    flex-shrink: 0;
+    padding-right: rem(20px);
+  }
 
   i { font-size: rem(15px); }
 
@@ -89,33 +120,47 @@ main {
     padding-right: 2px;
   }
 
-  .fa-code {
-    color: $gr;
-    padding-right: rem(20px);
-  }
+  .fa-code { color: $gr; }
 
   q {
     margin-left: auto;
     color: $w4;
+    font-style: italic;
     font-size: rem(14px);
-    font-weight: 500;
     quotes: "“" "”";
 
-    &:before {
-      content: open-quote;
-      font-size: rem(16px);
-    }
 
     span {
-      font-style: italic;
+      font-style: normal;
+      font-weight: 500;
 
       &:before {
+        content: open-quote;
+        font-size: rem(16px);
+      }
+
+      &:after {
         content: close-quote ' - ';
         font-size: rem(16px);
-        font-weight: 500;
-        font-style: normal;
       }
     }
+
+    @media screen and (max-width: rem(560px)) and (min-width: rem(412px)) {
+      text-align: right;
+
+      span {
+        display: block;
+
+        &:after { content: close-quote; }
+      }
+    }
+  }
+
+
+  @media screen and (max-width: rem(500px)) {
+    padding: rem(12px);
+
+    &__mark { padding-right: rem(12px); }
   }
 }
 
@@ -135,25 +180,54 @@ footer {
   @media screen and (max-width: rem(740px)) {
     .container section { width: 100%; }
 
-    .links { padding-top: rem(40px); }
+    .links {
+      padding-top: rem(40px);
+      align-items: center;
+
+      &:after {
+        position: relative;
+        margin-left: auto;
+      }
+    }
   }
 
   @media screen and (max-width: rem(500px)) {
     padding-left: rem(10px);
     padding-right: rem(10px);
 
-    .container { padding: rem(20px) 0; }
+    .container { padding: rem(10px) 0; }
 
-    a {
-      width: 100%;
-      display: inline-block;
-      padding: 10px 0;
+    .contact-card {
+      border-radius: 20px 20px 4px 20px;
+
+      &__contact {
+        a {
+          display: block;
+          padding: 12px 0;
+        }
+
+        .contact__email { margin-bottom: 0; }
+
+        .contact__call:before { content: 'Give me a call at '; }
+      }
     }
 
-    .contact-card__contact .contact__email { margin-bottom: 0; }
+    .links {
+      padding-top: rem(20px);
+      flex-wrap: wrap;
+      justify-content: space-around;
 
-    .contact-card__contact .contact__call:before {
-      content: 'Give me a call at ';
+      a {
+        padding: 12px;
+
+        &:not(:last-child) { margin-right: 0; }
+      }
+
+      &:after {
+        width: 100%;
+        padding-top: rem(10px);
+        text-align: center;
+      }
     }
   }
 }
@@ -162,7 +236,9 @@ footer {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+  position: relative;
   flex: 1;
+  @include blackout();
 
   a {
     display: inline-block;
@@ -179,6 +255,16 @@ footer {
       box-shadow: 0 2px $gr;
       transition: all 200ms ease;
     }
+  }
+
+  &:after {
+    content: 'herrero';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font: rem(21px) $cubano;
+    opacity: .2;
+    color: $w1;
   }
 }
 
@@ -200,7 +286,7 @@ footer {
     top: 0;
     bottom: 0;
     left: rem(20px);
-    color: $gr;
+    color: $w2;
     font: 34px $cubano;
   }
 
@@ -227,7 +313,7 @@ footer {
       transition: all 500ms ease;
 
       span {
-        color: $bl;
+        color: $gr;
         transition: color 500ms ease;
       }
 

@@ -3,6 +3,11 @@
   to { opacity:1 }
 }
 
+@keyframes blackout {
+  from { opacity: .2; }
+  to { opacity: 1; }
+}
+
 @keyframes contact {
   from { transform: rotate(-20deg) translateY(80%); }
   to { opacity: 1; transform: rotate(0deg) translateY(0%); }
