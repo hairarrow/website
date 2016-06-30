@@ -11,8 +11,6 @@ body {
   background: $w1;
   box-shadow: inset 0 4px $gr;
   -webkit-font-smoothing: antialiased;
-  opacity: 0;
-  animation: fade 500ms ease 500ms forwards;
 
   @media screen and (max-height: 800px) { height: auto; }
 }
@@ -53,7 +51,7 @@ main {
     font-weight: 600;
     line-height: 1.6;
     box-shadow: 0 1px $w2;
-    @include blackout(1000ms, 0ms);
+    @include blackout(1000ms, 200ms);
 
     @media screen and (max-width: rem(500px)) {
       font-size: rem(24px);
