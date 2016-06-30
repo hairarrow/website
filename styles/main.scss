@@ -321,7 +321,7 @@ footer {
         transition: all 200ms ease;
 
         span {
-          color: $b2;
+          color: $gr;
           transition: color 200ms ease;
         }
       }
@@ -338,7 +338,7 @@ footer {
       }
 
       &:hover:before {
-        color: $b3;
+        color: $gr;
         transition: color 200ms ease;
       }
     }
@@ -351,7 +351,7 @@ footer {
       }
 
       &:hover:before {
-        color: $b3;
+        color: $gr;
         transition: color 200ms ease;
       }
     }
