@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack && cp -R *.html build/",
     "start": "npm run build && webpack-dev-server --inline --hot --content-base build/",
-    "deploy-init": "rm -rf build/ && git clone https://github.com/hairarrow/website build/ && cd build/ && git checkout gh-pages; git reset --hard origin/gh-pages",
+    "deploy-init": "rm -rf build/ && git clone https://github.com/hairarrow/website build/ && cd build/ && git checkout gh-pages; git reset --hard origin/gh-pages; cd -",
     "deploy": "npm run build && cd build/ && git add .; git commit -m 'release'; git push origin; cd -"
   },
   "repository": {
