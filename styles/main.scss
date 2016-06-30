@@ -1,42 +1,4 @@
-$font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$cubano: "Cubano", Helvetica, sans-serif;
-
-// base16 Ocean
-$w1: #EFF1F5;
-$w2: #DFE1E8;
-$w3: #C0C5CE;
-$w4: #A7ADBA;
-$b1: #2B303B;
-$b2: #343D46;
-$b3: #4F5B66;
-$b4: #65737E;
-$gr: #A3BE8C;
-$bl: #8FA1B3;
-$cy: #96B5B4;
-$rd: #BF616A;
-$or: #D08770;
-$pu: #B48EAD;
-$yl: #EBCB8B;
-
-$accent: $b4;
-$rgc: #F79222;
-
-@import "reset";
-@import "font";
-@import "fade";
-
-@function rem($size) {
-  $remSize: $size / 16px;
-  @return #{$remSize}rem;
-}
-
-@mixin layout() {
-  width: 100%;
-  max-width: rem(740px);
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-}
+@import 'init'; // Reset, Fonts, Functions and Misc Settings
 
 body {
   height: 100vh;
