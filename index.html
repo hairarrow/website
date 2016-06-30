@@ -7,8 +7,8 @@
   <meta name="description" content="Emmanuel Herrero is a web designer working in Hawaii.">
   <meta name="author" content="Emmanuel Herrero">
   <meta name="keywords" content="Emmanuel Herrero, designer, web design, web designer, design, user experience, ux">
-  <meta name="google-site-verification" content="9TNJbSR1k8w6vY6omclxl_O93n2Y290WlGRRI5qa4Ak" />
   <link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
+  <link rel="stylesheet" href="/styles.css">
   <script src="https://use.fontawesome.com/e702835fe1.js"></script>
 </head>
 
@@ -27,11 +27,13 @@
       empower people to solve complicated problems.
     </p>
     <div class="loveyourcode">
-      <i class="fa fa-heart"></i>
-      <i class="fa fa-code"></i>
+      <div class="loveyourcode__mark">
+        <i class="fa fa-heart"></i>
+        <i class="fa fa-code"></i>
+      </div>
       <q>
-        I never did a day's work in my life. It was all fun.
-        <span>Thomas A Edison</span>
+        <span>I never did a day's work in my life. It was all fun.</span>
+        Thomas A Edison
       </q>
     </div>
   </main>
@@ -59,8 +61,6 @@
     </div>
   </footer>
 
-  <script src="bundle.js"></script>
-
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -69,7 +69,6 @@
 
     ga('create', 'UA-40437460-2', 'auto');
     ga('send', 'pageview');
-    ga('set', 'userId', {{USER_ID}});
   </script>
 
 </body>
