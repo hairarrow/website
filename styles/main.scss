@@ -52,7 +52,7 @@ body {
   opacity: 0;
   animation: fade 500ms ease 500ms forwards;
 
-  @media screen and (max-height: 1000px) { height: auto; }
+  @media screen and (max-height: 800px) { height: auto; }
 }
 
 header {
