@@ -1,161 +1,301 @@
 $font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $cubano: "Cubano", Helvetica, sans-serif;
-$accent: #008EEB;
-$rgc: #F79222;
 
-$phone: "only screen and (max-width: 460px)";
-$phone-small: "only screen and (max-width: 360px)";
+// base16 Ocean
+$w1: #EFF1F5;
+$w2: #DFE1E8;
+$w3: #C0C5CE;
+$w4: #A7ADBA;
+$b1: #2B303B;
+$b2: #343D46;
+$b3: #4F5B66;
+$b4: #65737E;
+$gr: #A3BE8C;
+$bl: #8FA1B3;
+$cy: #96B5B4;
+$rd: #BF616A;
+$or: #D08770;
+$pu: #B48EAD;
+$yl: #EBCB8B;
+
+$accent: $b4;
+$rgc: #F79222;
 
 @import "reset";
 @import "font";
 @import "fade";
 
-body {
-  background-color: darken(white, 5);
-  border-top: 4px solid $accent;
-  font: normal 16px $font-family;
-  -webkit-font-smoothing: antialiased;
+@function rem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
 }
 
-a { text-decoration: none; }
+@mixin layout() {
+  width: 100%;
+  max-width: rem(740px);
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-h1 {
-  margin: 10% auto 10px;
-  text-align: center;
-  font: 100px $cubano;
-  color: $accent;
-  text-shadow: 0 4px 0 rgba($accent, 0.2);
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: $b2;
+  font: 16px $font-family;
+  background: $w1;
+  box-shadow: inset 0 4px $gr;
+  -webkit-font-smoothing: antialiased;
+  opacity: 0;
+  animation: fade 500ms ease 500ms forwards;
 
-  @media #{$phone} { font-size: 80px;  }
+  @media screen and (max-height: 1000px) { height: auto; }
+}
 
-  @media #{$phone-small} {
-    margin: 24px auto;
-    font-size: 64px;
+header {
+  @include layout();
+  display: flex;
+  padding: rem(60px) 0;
+
+  h1 {
+    color: $w3;
+    color: $gr;
+    font: 42px $cubano;
+    padding-left: rem(20px);
   }
 }
 
-.role {
-  text-align: center;
-  font: 300 32px $font-family;
-  color: darken(white, 65);
-  text-shadow: 0 2px 0 darken(white, 10);
+main {
+  @include layout();
+  flex-direction: column;
+  flex: 1;
 
-  a {
-    color: darken(white, 65);
-    box-shadow: 0 0 0 $accent, 0 2px 0 $accent;
-    @include transition;
+  h2 {
+    margin-bottom: rem(60px);
+    padding-bottom: rem(60px);
+    padding-left: rem(20px);
+    padding-right: rem(20px);
+    color: $b3;
+    font-size: rem(28px);
+    font-weight: 600;
+    line-height: 1.6;
+    box-shadow: 0 1px $w2;
 
-    &:hover {
-      box-shadow: 0 4px 0 $rgc, 0 6px 0 $rgc;
-      color: $accent;
+    @media screen and (max-width: rem(500px)) {
+      br { display: none; }
     }
   }
 
-  @media #{$phone} { font-size: 26px; }
+  a {
+    color: $w4;
+    box-shadow: 0 2px $w2;
+    transition: all 300ms ease;
 
-  @media #{$phone-small} { font-size: 18px; }
+    &:hover {
+      color: $gr;
+      box-shadow: 0 4px $gr;
+      transition: all 200ms ease;
+    }
+  }
+
+  p {
+    max-width: rem(600px);
+    margin-bottom: rem(60px);
+    padding-left: rem(20px);
+    padding-right: rem(20px);
+    color: $b4;
+    font-size: rem(18px);
+    font-weight: 500;
+    line-height: 1.8;
+  }
+}
+
+.loveyourcode {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  padding: rem(20px);
+  border-top: 1px solid $w2;
+
+  i { font-size: rem(15px); }
+
+  .fa-heart {
+    color: $rd;
+    padding-right: 2px;
+  }
+
+  .fa-code {
+    color: $gr;
+    padding-right: rem(20px);
+  }
+
+  q {
+    margin-left: auto;
+    color: $w4;
+    font-size: rem(14px);
+    font-weight: 500;
+    quotes: "“" "”";
+
+    &:before {
+      content: open-quote;
+      font-size: rem(16px);
+    }
+
+    span {
+      font-style: italic;
+
+      &:before {
+        content: close-quote ' - ';
+        font-size: rem(16px);
+        font-weight: 500;
+        font-style: normal;
+      }
+    }
+  }
+}
+
+footer {
+  margin-top: auto;
+  background: linear-gradient($b3, $b4);
+  padding-left: rem(40px);
+  padding-right: rem(40px);
+
+  .container {
+    @include layout();
+    flex-wrap: wrap;
+    padding: rem(40px) 0;
+    padding-right: 0;
+  }
+
+  @media screen and (max-width: rem(740px)) {
+    .container section { width: 100%; }
+
+    .links { padding-top: rem(40px); }
+  }
+
+  @media screen and (max-width: rem(500px)) {
+    padding-left: rem(10px);
+    padding-right: rem(10px);
+
+    .container { padding: rem(20px) 0; }
+  }
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex: 1;
+
+  a {
+    display: inline-block;
+    color: $w4;
+    font-size: rem(16px);
+    font-weight: 500;
+    box-shadow: 0 1px $b4;
+    transition: all 500ms ease;
+
+    &:not(:last-child) { margin-right: rem(20px); }
+
+    &:hover {
+      color: $gr;
+      box-shadow: 0 2px $gr;
+      transition: all 200ms ease;
+    }
+  }
 }
 
 .contact-card {
-  background: white;
-  margin: auto;
-  width: 100%;
-  max-width: 420px;
-  min-width: 270px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 20px;
-  border: 1px solid #ccc;
-  border: 1px solid $accent;
-  border-radius: 8px;
-  box-shadow: 0 4px 0 darken(white, 7);
+  position: relative;
+  padding: rem(20px);
+  padding-left: rem(60px);
+  background: $w1;
+  border-radius: 40px 40px 4px 40px;
+  box-shadow: 0 4px 22px 2px rgba(#000, .12);
+  opacity: 0;
+  transform-origin: 100% 100%;
+  animation: contact 500ms ease 1000ms forwards;
 
-  @media #{$phone} { width: 90%; }
-
-  .mark {
-    text-align: center;
-    font: 22px $cubano;
-    line-height: 32px;
-    width: 32px;
-    background: $accent;
-    color: #fff;
-    border-radius: 50%;
+  &__mark {
+    display: flex;
+    align-items: center;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 0;
+    bottom: 0;
+    left: rem(20px);
+    color: $gr;
+    font: 34px $cubano;
   }
 
-  .name {
-    margin-top: 90px;
-    color: lighten(black, 30);
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 18px;
+  &__name {
+    color: $b4;
+    font-size: rem(18px);
+    font-weight: 500;
   }
 
-  .title {
-    color: lighten(black, 50);
-    text-align: center;
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 36px;
+  &__title {
+    padding-bottom: rem(14px);
+    color: $w4;
+    font-size: rem(12px);
+    font-weight: 600;
   }
 
-  .contact {
+  &__contact {
+    font-size: rem(14px);
+    font-weight: 500;
+
     a {
-      display: block;
-      width: auto;
-      padding-left: 14px;
-      margin-bottom: 8px;
-      color: lighten(black, 30);
-      font-size: 14px;
-      line-height: 28px;
-      border-bottom: 1px solid rgba($accent, 0);
-      overflow: hidden;
-      @include transition;
+      color: $b4;
+      box-shadow: 0 1px $w2;
+      transition: all 500ms ease;
 
-      @media #{$phone} {
-        padding: 5px 14px;
-      }
-
-      &:first-child {
-        margin-bottom: 4px;
-
-        &:after { content: 'Email Me'; }
-      }
-
-      &:last-child:after { content: 'Call Me'; }
-
-      &:after {
-        @include transition;
-        position: relative;
-        top: 30px;
-        padding-right: 14px;
-        float: right;
-        font-size: 12px;
-        font-weight: bold;
-        color: darken(white, 20);
-        text-transform: uppercase;
-      }
-
-      span { color: $accent; font-weight: bold; }
-
-      @mixin x {
-        color: $accent;
-        border-bottom: 1px solid $accent;
-
-        &:after { top: 0; }
+      span {
+        color: $bl;
+        transition: color 500ms ease;
       }
 
       &:hover {
-        @include x;
+        color: $gr;
+        box-shadow: 0 2px $gr;
+        transition: all 200ms ease;
 
-        &:after { color: $accent; }
+        span {
+          color: $b2;
+          transition: color 200ms ease;
+        }
+      }
+    }
+
+    .contact__email {
+      display: inline-block;
+      margin-bottom: rem(8px);
+
+      &:before {
+        content: 'Write me at ';
+        color: $w3;
+        transition: color 500ms ease;
       }
 
-      @media #{$phone} { @include x; }
+      &:hover:before {
+        color: $b3;
+        transition: color 200ms ease;
+      }
+    }
+
+    .contact__call {
+      &:before {
+        content: 'or give me a call at ';
+        color: $w3;
+        transition: color 500ms ease;
+      }
+
+      &:hover:before {
+        color: $b3;
+        transition: color 200ms ease;
+      }
     }
   }
 }

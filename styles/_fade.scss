@@ -1,31 +1,9 @@
-@-webkit-keyframes Anim {from {opacity:0; } to {opacity:1; } }
-@-moz-keyframes Anim {from {opacity:0; } to {opacity:1; } }
-@keyframes Anim {from {opacity:0; } to {opacity:1; } }
-
-.fade {    
-  opacity: 0;
-  -webkit-animation:Anim ease-in 1;
-  -moz-animation:Anim ease-in 1;
-  animation:Anim ease-in 1;
-  // opacity: 0.7;
-  filter: alpha(opacity=70);
-  -webkit-animation-fill-mode:forwards;
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
-  -webkit-animation-duration:1s;
-  -moz-animation-duration:1s;
-  animation-duration:1s;
-  -webkit-animation-delay: 0.3s;
-  -moz-animation-delay: 0.3s;
-  animation-delay: 0.3s;
+@keyframes fade {
+  from { opacity:0 }
+  to { opacity:1 }
 }
 
-.fade-2 {
-  -webkit-animation-delay: 1.5s;
-  -moz-animation-delay: 1.5s;
-  animation-delay: 1.5s;
-}
-
-@mixin transition {
-  transition: all 0.3s ease;
+@keyframes contact {
+  from { transform: rotate(-20deg) translateY(80%); }
+  to { opacity: 1; transform: rotate(0deg) translateY(0%); }
 }
