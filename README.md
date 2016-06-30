@@ -9,3 +9,8 @@ The app is hosted using the `gh-pages` branch.
 
 *Note:* You might have to run `npm install -g webpack webpac-dev-server` before
 running `npm start`
+
+## Deploying
+- *If this is the first time* you're deploying after pulling
+  - run `npm run deploy-init`
+- *else* run `npm run deploy`
