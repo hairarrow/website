@@ -1,0 +1,231 @@
+.cultur {
+  // reset
+  height: inherit;
+
+  header {
+    padding-bottom: 0;
+
+    h1 {
+      padding-right: rem(20px);
+      padding-bottom: rem(8px);
+      color: $w3;
+      font-size: rem(24px);
+      border-bottom: 4px solid $w3;
+      border-left: 4px solid $w3;
+    }
+  }
+
+  main {
+    @media screen and (max-width: rem(500px)) {
+      padding-left: rem(14px);
+      padding-right: rem(14px);
+
+      * { max-width: 100%; }
+    }
+  }
+
+  main h2 {
+    margin-bottom: 0;
+    padding: 0 rem(20px);
+    box-shadow: none;
+  }
+
+  main p {
+    margin-bottom: 0;
+    padding: rem(10px) rem(20px);
+  }
+
+  .process ol {
+    margin-left: rem(30px);
+    padding-left: rem(8px);
+    list-style-type: decimal;
+
+    li p {
+      border-left: 4px solid $w2;
+    }
+  }
+
+  li {
+    max-width: rem(600px);
+    margin-bottom: rem(40px);
+    padding-left: rem(20px);
+    padding-right: rem(20px);
+    color: $b4;
+    font-size: rem(21px);
+    font-weight: 500;
+    line-height: 1.8;
+    @include blackout();
+
+    @media screen and (max-width: rem(500px)) {
+      margin-bottom: rem(40px);
+      font-size: rem(16px);
+    }
+
+    @media screen and (max-width: rem(400px)) {
+      font-size: rem(14px);
+    }
+
+
+  }
+
+  .header {
+    padding: rem(80px) 0;
+
+    h1 {
+      margin-bottom: rem(80px);
+      padding-left: rem(20px);
+      padding-right: rem(20px);
+      font-size: rem(32px);
+      font-weight: 600;
+      color: $b2;
+    }
+  }
+
+  main > section:not(:last-child) {
+    padding: rem(80px) 0;
+    border-bottom: 1px solid $w2;
+
+    h2 {
+      margin-bottom: rem(20px);
+    }
+  }
+
+  main > section:last-child {
+    padding: rem(80px) 0;
+
+    h2 {
+      margin-bottom: rem(20px);
+    }
+  }
+
+  .clarification {
+    margin-bottom: rem(40px);
+    padding-bottom: rem(20px);
+    color: $w4;
+    border-left: 4px solid $gr;
+    border-bottom: 4px solid $gr;
+    border-bottom-left-radius: 8px;
+  }
+
+  .goal .clarification {
+    margin-bottom: rem(80px);
+  }
+
+  .detail {
+    margin-bottom: rem(20px);
+    padding: rem(20px);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px rgba(#000, .05),
+      0 4px 12px 2px rgba(#000, .05);
+  }
+
+  .goal .detail {
+    max-width: none;
+    font-size: rem(38px);
+  }
+
+  .process h2 {
+    margin-bottom: rem(60px) !important;
+  }
+
+  .carne {
+    ol {
+      padding: 0;
+
+      li, li p {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      li {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 0 1px rgba(#000, .05),
+          0 4px 12px 2px rgba(#000, .05);
+
+        li { padding: rem(14px); }
+
+        h3 {
+          font-size: rem(24px);
+          padding: rem(20px);
+          padding-bottom: 0;
+        }
+
+        p,
+        h4 {
+          padding-left: rem(20px);
+          padding-right: rem(20px);
+        }
+
+        .tags {
+          width: 100%;
+          max-width: none;
+          margin-bottom: rem(20px);
+          padding-top: 0;
+          padding-left: rem(20px);
+          padding-bottom: rem(20px);
+          color: $w3;
+          font-size: rem(14px);
+          font-weight: 600;
+          box-shadow: 0 1px rgba(#000, .1);
+        }
+
+        ul {
+          padding: rem(10px);
+        }
+
+        .game {
+          box-shadow: 0 0 0 1px $gr,
+            0 4px 12px 2px rgba(#000, .05);
+
+          h4 {
+            font-weight: 600;
+            font-size: rem(28px);
+          }
+
+          h5 { margin-top: rem(40px); }
+        }
+      }
+    }
+  }
+
+  .notifications {
+    p, h4 {
+      padding-left: rem(20px) !important;
+      padding-right: rem(20px) !important;
+    }
+
+    p { margin-bottom: rem(40px); }
+
+    ul {
+      padding: rem(20px) !important;
+    }
+
+    li {
+      font-size: rem(16px);
+      padding: rem(10px) !important;
+      display: inline-block;
+      margin-bottom: rem(16px);
+    }
+  }
+
+  .further,
+  .dashboard,
+  .search,
+  .collections {
+    ul { padding: rem(20px) !important; }
+
+    li {
+      font-size: rem(16px);
+      padding: rem(10px) !important;
+      display: inline-block;
+      margin-bottom: rem(16px);
+    }
+
+    em {
+      font-style: italic;
+    }
+  }
+
+}

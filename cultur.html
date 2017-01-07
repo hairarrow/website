@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cultur | Herrero Design</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="cultur">
+  <main>
+    <header>
+      <h1>Herrero</h1>
+    </header>
+    <section class="header">
+      <h1>Cultur: Your Event Calendar and Deal Finder</h1>
+      <p class="clarification">
+        With this document, I want to present and discuss my insights and ideas
+        for the Cultur service. This document should be seen as a living
+        document until application development begins.
+      </p>
+    </section>
+
+    <section class="goal">
+      <h2>Goal</h2>
+      <p class="clarification">
+        The most important item on this document. Every following item should
+        be justified by describing how it helps our goals.
+      </p>
+      <p class="detail">
+        <!--  needs work -->
+        Help people discover events and deals they care about.
+      </p>
+    </section>
+
+    <section class="approach">
+      <h2>Approach</h2>
+      <p class="clarification">
+        General guidelines that govern design decisions
+      </p>
+      <p class="detail">
+        Gather data from user interactions in the application to provide
+        curated results. Design an approachable design aesthetic that generally
+        stays out of the users way and highlights the content they want to see.
+      </p>
+      <p>
+        We subscribe to a clear design process for every component we want to
+        create. This requires flexibility and abstract thought in regards to
+        the unique components that will make up our application.
+      </p>
+      <p>
+        We establish and understand our key performance indicators to measure
+        the success of a feature and the service as a whole. This will give us
+        information that will help us make better design decisions.
+      </p>
+    </section>
+
+    <section class="flow">
+      <h2>User Objectives and Flow</h2>
+      <p class="detail">
+        The faster we learn what patterns are the most common, we can optimize
+        that experience to be faster and delightful.
+      </p>
+      <p>
+        We need to define the interactions someone could have with our service
+        and create clear expectations for them. Furthermore, we need to
+        understand the basic patterns a user will take to receive the content
+        they want.
+      </p>
+    </section>
+
+    <section class="process">
+      <h2>Design Process</h2>
+      <ol>
+        <li>Choose one component to work on</li>
+        <li>Brain-storm ideas for that component</li>
+        <li>Create sketches for those ideas; continue brain-storming</li>
+        <li>
+          After sketching, create a prototype of that component to test
+          interactions.
+        </li>
+        <li>
+          <p>
+            After finishing a prototype, we agree to stop iterating and start
+            designing the next component on the agenda. We should still be
+            flexible when new ideas come up, but heavy iteration should be avoided
+            until we can make design decisions that are supported by UX research.
+          </p>
+          <p>
+            This approach can be strict, but the goal is to minimize risk, reduce
+            costs, and optimize the use of our resources.
+          </p>
+        </li>
+        <li>
+          Present to the developers and ensure there's a clear understanding
+          of the rationale, details and expectations of the design in a
+          component.
+        </li>
+        <li>Review Component with developers and requests changes as needed.</li>
+      </ol>
+    </section>
+
+    <section class="carne">
+      <h2>La Carne</h2>
+      <p class="clarification">
+        How we can use our approach to create major features that support our
+        goals. These are the features I believe require the most attention and
+        polish in order to create a beautiful, useful application that people
+        will want to use frequently.
+      </p>
+
+      <ol>
+
+        <li>
+          <h3>Data Collection and Presentation Patterns</h3>
+          <!--
+            From wikipedia:
+            The process of gathering and measuring information on targeted
+            variables in an established systematic fashion, which then enables
+            one to answer relevant questions and evaluate outcomes.
+          -->
+          <p class="tags">
+            backend, almost no visual design, expensive but worth it
+          </p>
+          <ul>
+            <li>
+              Every action a user takes in the application should be tracked
+              and analyzed to provide better content curation.
+            </li>
+            <li>
+              People need to subscribe to a category. We should optimize the
+              events and deals displayed to correlate with a users interests.
+            </li>
+            <li>
+              Events and deals should be actionable. People should have the
+              expectation that they can add an event to their calendars, share
+              it with friends or groups of people, like an event or see similar
+              events or deals, and dislike an event or deal. In the case of
+              disliking an item, we should clarify the reason behind disliking
+              to keep our curation engine accurate.
+            </li>
+            <li>
+              We should know what is trending in specific categories, events and
+              collections.
+            </li>
+            <li>
+              Users should be able to follow other users, venues and artists.
+              Events and deals from sources a person follows should have a
+              higher importance in relation to other presentation components.
+            </li>
+            <li class="game">
+              <h4>The Game</h4>
+              <p>
+                I want to create a fun game to help us curate events and deals
+                for our cultur users. This component would be included in
+                different parts of our application and could have active and
+                passive interactions.
+              </p>
+              <h5>Interface Considerations: Passive</h5>
+              <p>
+                As a crucial component in data acquisition, the game should be
+                a persistent passive presence that sends out a signals that
+                reward users when acting on an event or deal.
+              </p>
+              <p>
+                This approach aims to create incentives for users to interact
+                with our services and let them know we're actively curating
+                the content they see. Think about Pandora's Music Streaming
+                service, a big reason for their success in retention is how it
+                remembers a users musical taste to curate the content presented.
+              </p>
+              <h5>Interface Considerations: Active</h5>
+              <p>
+                We would give users an option to quickly catch up on events or
+                deals that could interest them with a card-swiping game.
+              </p>
+              <p>
+                When we consider how to display information, we usually decide
+                that an item should display relevant data points about the
+                content; this includes addresses, pictures, prices, categories,
+                people going, and many more. We find a problem when we present
+                a list of many items that is easily cluttered depending on the
+                amount of data displayed.
+              </p>
+              <p>
+                A card interface facilitates the display of more relevant data
+                because a user is only shown one element that allows for focused
+                interactions. Furthermore, if they play the game, they're forced
+                to take some sort of action on an event which will help our
+                curation efforts.
+              </p>
+            </li>
+          </ul>
+        </li>
+
+        <li class="notifications">
+          <h3>Notifications</h3>
+          <p class="tags">backend, native, intelligent, MUST</p>
+          <h4>Rule 1: Notifications need to be intelligent.</h4>
+          <p>
+            Too many notifications will be annoying and could harm the user-base;
+            too few notifications will be ignored in the slurry of signals a
+            user receives in a day.
+          </p>
+          <h4>Rule 2: Notifications should be curated</h4>
+          <p>
+            We should only send notifications after establishing a strong
+            correlation between the item and a user's interests.
+          </p>
+          <h4>Rule 3: Notifications should be geo-fenced</h4>
+          <p>
+            After all, that's how we're going to make money on deals and
+            featured events, but these will always need to pass rule 1 and 2.
+          </p>
+          <h4>Notifications should follow our rules and cover:</h4>
+          <ul>
+            <li>Upcoming events or deals</li>
+            <li>Nearby deals</li>
+            <li>Events coming up in a weekend</li>
+            <li>Featured events</li>
+            <li>New collections</li>
+          </ul>
+        </li>
+
+        <li class="onboarding">
+          <h3>On-boarding</h3>
+          <p class="tags">pleasant, simple, useful, MUST</p>
+          <h4>
+            Establish a simple method to establish a base line of results
+            for a user.
+          </h4>
+          <p>
+            We present different functions of the service to establish
+            clear expectations.
+          </p>
+          <p>
+            This could use "the game" to kick everything off and familiarize
+            people with the different functions of our service.
+          </p>
+          <p>
+            Take a moment to justify and ask for permissions, while
+            establishing expectations.
+          </p>
+          <ul>
+            <li>
+              <em>Notifications:</em>
+              We will only send notifications for items that interest that
+              person. They will always have the power to tweak with their
+              notification options to ensure they only receive content they
+              care about.
+            </li>
+            <li>
+              <em>Location:</em>
+              We will use location services to let people know when something
+              interesting is happening near them, or if they could take
+              advantage of a nearby deal the want.
+            </li>
+            <li>
+              <em>Facebook:</em>
+              We use Facebook to help people share items with friends and see
+              what deals or events their friends have share or expressed
+              interest in. We will never post to Facebook without a users
+              permission.
+            </li>
+          </ul>
+        </li>
+
+        <li class="collections">
+          <h3>Collections</h3>
+          <p class="tags">
+            front-end, graphic design, back-end, machine-assisted
+            editorial content
+          </p>
+          <p>
+            Collections are curated lists of events and deals that match a
+            specific theme. For example:
+          </p>
+          <ul>
+            <li>Reggae Concerts</li>
+            <li>Outdoors Family Activities</li>
+            <li>Technology meet-ups and Presentations</li>
+            <li>This Weekend</li>
+            <li>Most Popular for [some category]</li>
+            <li>Editor's Choice</li>
+          </ul>
+          <p>
+            These collections could be presented as a list and could incorporate
+            the active interface of "the game". They should be updated
+            frequently and have constraints that dictate who sees them.
+            Collections will be a part of a cultur, and as such, they could be
+            featured at the top filtered results and will only be displayed to
+            people that follow those culturs.
+          </p>
+          <p>
+            Basically, they're collections of events and deals that belong to a
+            specific cultur and have a shared theme.
+          </p>
+        </li>
+
+        <li class="search">
+          <h3>Search</h3>
+          <p class="tags">back-end, front-end, delightful</p>
+          <h4>
+            We need a search that is capable of finding users, musicians, venues,
+            events, and deals.
+          </h4>
+          <p>
+            The search should be flexible enough to answer these questions:
+          </p>
+          <ul>
+            <li>
+              What events or deals of <em>category</em> are happening between
+              <em>{date range}</em>?
+            </li>
+            <li>
+              What is <em>friend</em> doing this weekend?
+            </li>
+            <li>
+              I'm traveling to <em>location</em>, what's happening there?
+            </li>
+            <li>What events or deals are happening at <em>Venue</em>?</li>
+            <li>
+              What events or deals of <em>any category</em> are coming up
+              at <em>any venue</em>?
+            </li>
+          </ul>
+        </li>
+
+        <li class="dashboard">
+          <h3>Dashboard</h3>
+          <p class="tags">front-end, UX</p>
+          <h4>
+            The first thing that people see when they open the app should be
+            curated modules of things they're interested in.
+          </h4>
+          <p>
+            We need to present it as a hub that can easily take them to the
+            feature they want to use, but also present content that could be
+            acted on quickly.
+          </p>
+          <h4>Dashboard Components</h4>
+          <ul>
+            <li>Relevant collections</li>
+            <li>frequent searches</li>
+            <li>Upcoming events that fit user interests</li>
+            <li>Events or deals nearby (regardless of category)</li>
+          </ul>
+        </li>
+
+        <li class="further">
+          <p>
+            The following are components that will also be designed following our
+            approach, but might require further discussion.
+          </p>
+          <ul>
+            <li>User Profiles</li>
+            <li>Featured Profiles for Artists and Venues</li>
+            <li>Automatic or custom groups of people with similar interests</li>
+            <li>Events/Deals List</li>
+            <li>Event/Deal Items</li>
+            <li>List of Culturs (Thumbnails could require graphic design)</li>
+            <li>Saved events list</li>
+            <li>
+              "My Calendar" view to provide upcoming events a user has said
+              they're going to or might be interested in
+            </li>
+            <li>Settings and privacy considerations</li>
+            <li>Notifications within the application</li>
+            <li>Inviting people to events</li>
+            <li>Inviting people to the service</li>
+            <li>Live streaming for events</li>
+            <li>
+              Event creation (which could be a featured saved for venues or artists)
+            </li>
+            <li>
+              Infrastructure considerations (moving to AWS, Facebook Live API)
+            </li>
+            <li>Check-in</li>
+          </ul>
+        </li>
+
+      </ol>
+
+    </section>
+
+    <section class="whatidoes">
+      <h2>What I do</h2>
+      <p>
+        It's important that we all understand what our roles are when creating a
+        product.
+      </p>
+      <p>
+        I primarily think about the experience people will have and how to
+        design user interfaces that facilitate those experiences. I sketch
+        different ideas to iterate quickly, create prototypes to test
+        interactions and user flow, and think strategically about the experience
+        of the service as a whole.
+      </p>
+      <p>
+        I will help you communicate ideas and designs with your developers to
+        create a delightful experience for users, and continuously learn about
+        the behaviors and user patterns within our application.
+      </p>
+    </section>
+
+    <section class="agenda">
+      <h2>Agenda</h2>
+      <p>{{ TODO }} We will have an agenda.</p>
+    </section>
+
+    <section class="money">
+      <h2>Money</h2>
+      <p>{{ TODO }} This will cost you money.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <section class="contact-card">
+        <div class="contact-card__mark">H</div>
+        <div class="contact-card__name">Emmanuel Herrero</div>
+        <div class="contact-card__title">UI | UX | Development</div>
+        <div class="contact-card__contact">
+          <a class="contact__email" href="mailto:emmanuel@herrero.design">
+            emmanuel<span>@</span>herrero.design
+          </a>
+          <div class="contact__phone">
+            <a href="sms:8087219990">Send me a text</a>
+            <a class="contact__call" href="tel:8087219990"><span>(808)</span> 721-9990</a>
+          </div>
+        </div>
+      </section>
+      <section class="links">
+        <a href="//dribbble.com/hairarrow">Dribbble</a>
+        <a href="//codepen.io/hairarrow">Codepen</a>
+        <a href="//github.com/hairarrow">Github</a>
+      </section>
+    </div>
+  </footer>
+
+
+</body>
+</html>
