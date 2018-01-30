@@ -23,17 +23,23 @@ body {
 header {
   @include layout();
   display: flex;
-  padding: rem(60px) 0;
+  flex-direction: column;
+  padding: rem(60px) rem(20px);
   @include blackout();
 
   h1 {
     color: $w3;
     color: $gr;
     font: 42px $cubano;
-    padding-left: rem(20px);
   }
 
-  @media screen and (max-width: rem(500px)) { padding: rem(40px) 0; }
+  p {
+    font-size: rem(14px);
+    font-weight: 500;
+    color: $w4;
+  }
+
+  @media screen and (max-width: rem(500px)) { padding: rem(40px) rem(20px); }
 }
 
 main {
@@ -81,7 +87,7 @@ main {
     padding-left: rem(20px);
     padding-right: rem(20px);
     color: $b4;
-    font-size: rem(18px);
+    font-size: rem(21px);
     font-weight: 500;
     line-height: 1.8;
     @include blackout();
