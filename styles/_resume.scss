@@ -1,0 +1,216 @@
+.resume {
+  $pb1: 10px;
+  $pb2: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  color: $b3;
+  background: $w1;
+  overflow: scroll;
+  z-index: 100;
+
+  &__container {
+    height: fit-content;
+    max-width: 720px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px rgba(#000, .1);
+  }
+
+  &__functions {
+    display: flex;
+    justify-content: space-between;
+    padding: $pb2 0;
+  }
+
+  &__close,
+  &__download {
+    color: $w4;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #fff;
+    border: 1px solid;
+    border-color: $w2;
+    border-radius: 4px;
+    box-shadow: 0 1px rgba(#000, .05);
+    transition: all ease 300ms;
+
+    &:hover {
+      background: darken(#fff, 1);
+      color: $gr;
+      border-color: $gr;
+      box-shadow: 0 2px rgba(#000, .075);
+      transition: all ease 180ms;
+    }
+  }
+
+  &__header { padding-bottom: $pb2; }
+
+  &__info {
+    display: flex;
+    align-items: baseline;
+    padding-bottom: $pb1;
+  }
+
+  &__name {
+    padding-right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  &__location {
+    font-size: 14px;
+    font-weight: bold;
+    opacity: .6;
+  }
+
+  &__contact {
+    padding-bottom: $pb1;
+  }
+
+  @mixin link() {
+    color: $b3;
+    transition: all ease 300ms;
+
+    &:hover {
+      color: $gr;
+      transition: color ease 180ms;
+    }
+  }
+
+  &__contact-number,
+  &__contact-email,
+  &__social-media-link { @include link(); }
+
+  &__contact-number:after { content: '\2022'; }
+
+  &__social-media:before {
+    content: '@hairarrow on ';
+    font-weight: 600;
+  }
+
+  &__social-media-link:not(:last-child):after { content: ', '; }
+  &__social-media-link:last-child:before { content: 'and '; }
+
+  &__title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &__sub-title {
+    margin-bottom: $pb1;
+    font-style: italic;
+  }
+
+  @mixin paragraph() {
+    max-width: 480px;
+    margin-bottom: $pb1;
+    font-size: 12px;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+
+  &__introduction { @include paragraph();  }
+
+  &__tags {
+    margin-bottom: $pb2;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+
+    > *:not(:last-child):after {
+      content: '\2022';
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+  }
+
+  &__proficiencies { padding-bottom: $pb2; }
+
+  &__proficiencies-title {
+    font-size: 18px;
+    padding-bottom: $pb1;
+  }
+
+  &__proficiencies-table {
+    font-size: 14px;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px $w3, 0 1px $w1;
+  }
+
+  &__proficiencies-row {
+    display: flex;
+
+    &:not(:last-child) > * { border-bottom: 1px solid $w3; }
+  }
+
+  &__proficiencies-column {
+    padding: 10px;
+    width: 80%;
+
+    &:first-child {
+      width: 20%;
+      text-align: right;
+      font-weight: 600;
+      background: $w2;
+      box-shadow: 1px 0 0 $w3;
+    }
+  }
+
+  &__experience { padding-bottom: $pb2; }
+
+  &__experience-title {
+    font-size: 18px;
+    padding-bottom: $pb1;
+  }
+
+  &__job-title {
+    display: flex;
+  }
+
+  &__job-title-name {
+    font-weight: 500;
+    margin-right: 10px;
+  }
+
+  &__job-employer { padding-bottom: $pb1; }
+
+  &__job-description { @include paragraph(); }
+
+  &__job-achievements-title {
+    margin-bottom: $pb1;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  &__university-credentials,
+  &__job-achievements-list {
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 500;
+    list-style-type: disc;
+
+    > *:not(:last-child) {
+      margin-bottom: $pb1;
+    }
+  }
+
+  &__education-title {
+    font-size: 18px;
+    padding-bottom: $pb1;
+  }
+
+  &__university-focus { font-weight: 500; }
+
+  &__university-name { margin-bottom: $pb1; }
+}
