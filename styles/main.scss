@@ -283,6 +283,25 @@ footer {
   transform-origin: 100% 100%;
   animation: contact 500ms ease 1000ms forwards;
 
+  &__resume {
+    position: absolute;
+    top: rem(20px);
+    right: rem(20px);
+    padding: 4px 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: $w4;
+    border: 1px solid;
+    border-radius: 4px;
+    transition: all 300ms ease;
+
+    &:hover {
+      color: $gr;
+      border: 1px solid;
+      transition: all 180ms ease;
+    }
+  }
+
   &__mark {
     display: flex;
     align-items: center;

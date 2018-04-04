@@ -13,6 +13,13 @@
   background: $w1;
   overflow: scroll;
   z-index: 100;
+  opacity: 0;
+  animation: fade 300ms ease forwards;
+
+  @media screen and (max-width: 800px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
   &__container {
     height: fit-content;
@@ -22,6 +29,14 @@
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 0 0 1px rgba(#000, .1);
+    transform: translateY(500px);
+    opacity: 0;
+    animation: resume 500ms ease-out 300ms forwards;
+
+    @media screen and (max-width: 600px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 
   &__functions {
@@ -58,6 +73,7 @@
     display: flex;
     align-items: baseline;
     padding-bottom: $pb1;
+    flex-wrap: wrap;
   }
 
   &__name {
@@ -126,7 +142,7 @@
     flex-wrap: wrap;
     font-size: 12px;
 
-    > *:not(:last-child):after {
+    > *:before {
       content: '\2022';
       padding-left: 4px;
       padding-right: 4px;
@@ -174,6 +190,7 @@
 
   &__job-title {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__job-title-name {
