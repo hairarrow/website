@@ -1,19 +1,13 @@
 .resume {
   $pb1: 10px;
   $pb2: 30px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
+  top: 4px;
   display: flex;
   justify-content: center;
   padding: 40px 0;
   color: $b3;
   background: $w1;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch; // smooth scrolling
-  z-index: 100;
   opacity: 0;
   animation: fade 300ms ease forwards;
 
