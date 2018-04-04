@@ -12,6 +12,7 @@
   color: $b3;
   background: $w1;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch; // smooth scrolling
   z-index: 100;
   opacity: 0;
   animation: fade 300ms ease forwards;
