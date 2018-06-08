@@ -64,19 +64,7 @@ main {
     }
   }
 
-/*  a {
-    color: $w4;
-    color: $or;
-    box-shadow: 0 2px $w2;
-    transition: all 300ms ease;
-
-    &:hover {
-      color: $gr;
-      box-shadow: 0 4px $gr;
-      transition: all 200ms ease;
-    }
-  }*/
-
+  h3,
   p {
     max-width: rem(600px);
     margin-bottom: rem(50px);
@@ -419,4 +407,4 @@ footer {
   }
 }
 
-@import 'cultur', 'resume', 'contact';
+@import 'cultur', 'resume', 'contact', 'work';
